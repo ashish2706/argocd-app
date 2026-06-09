@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: argo-nginx-webapp
   namespace: default
   labels:
     app: nginx
@@ -16,7 +16,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:stable-alpine
+      - name: nginx-webapp
+        image: ashish2706/argo-nginx-webapp:latest
         ports:
         - containerPort: 80
